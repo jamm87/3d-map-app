@@ -1,0 +1,19 @@
+{
+  "name": "R Shiny 3D Map App",
+  "image": "rocker/geospatial:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "REditorSupport.r"
+      ]
+    }
+  },
+  "postCreateCommand": "Rscript -e 'install.packages(c(\"shiny\", \"rayshader\", \"sf\", \"elevatr\", \"tidygeocoder\", \"shinycssloaders\"))'",
+  "forwardPorts": [8787, 3838],
+  "portsAttributes": {
+    "3838": {
+      "label": "Shiny App",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
